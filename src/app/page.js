@@ -1,14 +1,24 @@
 'use client'
 import Header from "./components/header";
 import Experience from "./components/experience";
+import Projects from "./components/projects";
 import { ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useAnimationControls } from 'framer-motion';
 
 export default function Home() {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [typingSpeed, setTypingSpeed] = useState(80);
+  
+  // Create a ref for the experience section
+  const experienceRef = useRef(null);
+  
+  // Function to scroll to experience section
+  const scrollToExperience = () => {
+    experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const phrases = ["student", "software engineer", "product manager", "data scientist"];
 
@@ -30,7 +40,7 @@ export default function Home() {
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-        setTypingSpeed(150); // Normal speed when typing
+        setTypingSpeed(100); // Normal speed when typing
       }
     };
 
@@ -40,10 +50,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-container relative min-h-screen">
-        <div>
-          <Header />
-        </div>
+      <Header scrollToExperience={scrollToExperience} />
+      <div className="bg-container relative min-h-[95vh]">
         <div className="flex flex-col items-end pr-10 lg:pr-20">
           <h1 className="text-white text-4xl md:text-6xl lg:text-8xl mt-10">Gregory Chang</h1>
           <div className="text-white text-2xl md:text-3xl lg:text-4xl mt-4 flex">
@@ -53,12 +61,27 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
-          <ChevronDown className="text-white w-12 h-12 animate-bounce-slow" />
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToExperience}
+            className="cursor-pointer"
+          >
+            <ChevronDown className="text-white w-12 h-12 animate-bounce-slow" />
+          </motion.div>
         </div>
       </div>
 
-      <div className="flex flex-col items-center pt-20 bg-white">
-        <h1 className="text-black text-5xl md:text-6xl lg:text-8xl mb-16">Experiences</h1>
+      <div ref={experienceRef} className="flex flex-col items-center pt-20 bg-white">
+        <motion.h1 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-black text-5xl md:text-6xl lg:text-8xl mb-16"
+        >
+          Experiences
+        </motion.h1>
       </div>
       <div className="min-h-screen flex flex-col items-start mr-20 ml-20 bg-white">
         <Experience />
@@ -67,6 +90,7 @@ export default function Home() {
       <div className="flex flex-col items-center pt-20 bg-gray-950">
         <h1 className="text-white text-5xl md:text-6xl lg:text-8xl mb-16 ">Projects</h1>
       </div>
+      <Projects />
     </main>
   );
 }

@@ -1,12 +1,13 @@
 import '@/app/globals.css';
 
-function Header() {
+function Header({ scrollToExperience }) {
   return (
-    <nav className="relative flex flex-col items-center bg-transparent">
+    <nav className="pb-2 flex flex-col items-center bg-black">
       <ul className="flex space-x-4 ml-10 mr-10 mt-4 items-center text-white">
         <div className="flex space-x-4  sm:text:xl md:text-2xl lg:text-3xl avgar-font ">
-          <li><a href="#about" className="hover:text-red-400">About</a></li>
-          <li><a href="#experience" className="hover:text-red-400">Experience</a></li>
+          <li><a href="/" className="hover:text-red-400">Home</a></li>
+          <li><a href="/about" className="hover:text-red-400">About</a></li>
+          <li><a onClick={scrollToExperience} className="hover:text-red-400 cursor-pointer">Experience</a></li>
           <li><a href="#contact" className="hover:text-red-400">Contact</a></li>
           <li><a href="#resume" className="hover:text-red-400">Resume</a></li>
         </div>
