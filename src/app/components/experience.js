@@ -1,9 +1,14 @@
 import '@/app/globals.css';
 import { useState } from 'react';
 import Image from 'next/image';
+import ExperiencePopup from './ExperiencePopup';
+// Import your markdown content
+import softwareEngineerContent from '@/app/content/experiences/software-engineer.md';
+// Import other markdown files as needed
 
 function Experience() {
     const [hoveredItem, setHoveredItem] = useState(null);
+    const [selectedExperience, setSelectedExperience] = useState(null);
 
     const experiences = [
         {
@@ -11,12 +16,13 @@ function Experience() {
             title: 'Software Engineer Mentor',
             description: 'Led hackathon to teach prototyping, design, and coding to 50 students',
             period: 'Oct \'24 - Present',
-            image: '/experiences/MESA.png' 
+            image: '/experiences/MESA.png',
+            content: softwareEngineerContent
         },
         {
             id: '2',
             title: 'Product Manager',
-            description: 'Managed product development for student exclusive ride-sharing website',
+            description: 'Managed product development for student exclusive ride-sharing website for 1000+ users',
             period: 'Jul \'24 - Present',
             image: '/experiences/aggieworks.png' 
         },
@@ -38,13 +44,13 @@ function Experience() {
             id: '5',
             title: 'Software Engineer',
             description: 'Developed flashcard website that integrated space reptition to improve learning efficiency',
-            period: 'Jun \'23 - Aug \'23',
-            image: '/experiences/codelablogo.png'
+            period: 'Oct \'23 - Jun \'24',
+            image: '/experiences/codelablogo.png',
         },
         {
             id: '6',
             title: 'Software Engineer',
-            description: 'Developed AI powered iternerary chatbot and optimized finacial model for travel agency in Tokyo, Japan',
+            description: 'Developed AI powered travel iternerary planner and optimized finacial model for travel agency in Tokyo, Japan',
             period: 'Jun \'23 - Aug \'23',
             image: '/experiences/TOKI.png'
         }
@@ -58,6 +64,7 @@ function Experience() {
                     className="mb-10 avgar-font group hover:cursor-pointer hover:text-red-400 relative"
                     onMouseEnter={() => setHoveredItem(exp.id)}
                     onMouseLeave={() => setHoveredItem(null)}
+                    onClick={() => setSelectedExperience(exp)}
                 >
                     <h2 className="text-5xl mb-4 transition-transform duration-300 group-hover:translate-x-2">{exp.title}</h2>
                     <div className="flex justify-between items-center mb-2">
@@ -87,6 +94,14 @@ function Experience() {
                     </div>
                 </div>
             ))}
+            
+            {/* Render popup when an experience is selected */}
+            {selectedExperience && (
+                <ExperiencePopup 
+                    experience={selectedExperience} 
+                    onClose={() => setSelectedExperience(null)}
+                />
+            )}
         </div>
     );
 }

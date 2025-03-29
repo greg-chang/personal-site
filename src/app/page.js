@@ -20,7 +20,7 @@ export default function Home() {
     experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const phrases = ["student", "software engineer", "product manager", "data scientist"];
+  const phrases = ["CS student @ UCD", "software engineer", "full stack developer", "product manager", "data scientist", "Visual Art Hobbyist"];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -83,7 +83,7 @@ export default function Home() {
           Experiences
         </motion.h1>
       </div>
-      <div className="min-h-screen flex flex-col items-start mr-20 ml-20 bg-white">
+      <div className="min-h-[85vh] flex flex-col items-start mr-20 ml-20 bg-white">
         <Experience />
       </div>
 
