@@ -66,15 +66,15 @@ function Experience() {
                     onMouseLeave={() => setHoveredItem(null)}
                     onClick={() => setSelectedExperience(exp)}
                 >
-                    <h2 className="text-5xl mb-4 transition-transform duration-300 group-hover:translate-x-2">{exp.title}</h2>
-                    <div className="flex justify-between items-center mb-2">
-                        <p className="text-lg transition-transform duration-300 group-hover:translate-x-2">{exp.description}</p>
-                        <span className="text-lg text-right relative">
+                    <h2 className="text-4xl md:text-5xl mb-4 transition-transform duration-300 group-hover:translate-x-2">{exp.title}</h2>
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <p className="text-lg transition-transform duration-300 group-hover:translate-x-2 mb-2 md:mb-0">{exp.description}</p>
+                        <span className="text-lg text-left md:text-right relative transition-transform duration-300 md:transition-none group-hover:translate-x-2 md:group-hover:translate-x-0">
                             {exp.period}
                             
-                            {/* Image that appears on hover */}
+                            {/* Image that appears on hover - only on larger screens */}
                             {hoveredItem === exp.id && (
-                                <div className="absolute bottom-full right-0 mb-2 z-10 animate-slide-in-from-right">
+                                <div className="hidden lg:block absolute bottom-full right-0 mb-2 z-10 animate-slide-in-from-right">
                                     <div className="max-w-[300px] h-[150px] relative overflow-hidden rounded-md animate-scale-in flex items-end justify-end">
                                         <Image 
                                             src={exp.image} 

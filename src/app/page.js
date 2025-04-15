@@ -20,7 +20,7 @@ export default function Home() {
     experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const phrases = ["CS student @ UCD", "software engineer", "full stack developer", "product manager", "data scientist", "Visual Art Hobbyist"];
+  const phrases = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "Visual Art Hobbyist"];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -49,11 +49,11 @@ export default function Home() {
   }, [text, isDeleting, loopNum, typingSpeed, phrases]);
 
   return (
-    <main>
+    <main className="relative">
       <Header scrollToExperience={scrollToExperience} />
-      <div className="bg-container relative min-h-[95vh]">
+      <div className="bg-container relative min-h-screen">
         <div className="flex flex-col items-end pr-10 lg:pr-20">
-          <h1 className="text-white text-4xl md:text-6xl lg:text-8xl mt-10">Gregory Chang</h1>
+          <h1 className="text-white text-4xl md:text-6xl lg:text-8xl mt-20">Gregory Chang</h1>
           <div className="text-white text-2xl md:text-3xl lg:text-4xl mt-4 flex">
             <span className="avgar-font">I'm a </span>
             <span className="typing-text ml-2 avgar-font text-red-400">{text}</span>
@@ -73,17 +73,11 @@ export default function Home() {
       </div>
 
       <div ref={experienceRef} className="flex flex-col items-center pt-20 bg-white">
-        <motion.h1 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-black text-5xl md:text-6xl lg:text-8xl mb-16"
-        >
-          Experiences
-        </motion.h1>
+        <h1 className="text-black text-5xl md:text-6xl lg:text-8xl mb-16">Experiences</h1>
+        {/* <h1 className="text-black text-5xl md:text-6xl lg:text-8xl mb-16 ">Experiences</h1> */}
       </div>
-      <div className="min-h-[85vh] flex flex-col items-start mr-20 ml-20 bg-white">
+
+      <div className="min-h-[85vh] flex flex-col items-start mx-10 md:mx-20  bg-white">
         <Experience />
       </div>
 
