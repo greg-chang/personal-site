@@ -12,12 +12,17 @@ export default function Home() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(80);
   
-  // Create a ref for the experience section
+  // Create refs for sections
   const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
   
-  // Function to scroll to experience section
+  // Functions to scroll to sections
   const scrollToExperience = () => {
     experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProjects = () => {
+    projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const phrases = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "Visual Art Hobbyist"];
@@ -50,7 +55,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <Header scrollToExperience={scrollToExperience} />
+      <Header scrollToExperience={scrollToExperience} scrollToProjects={scrollToProjects} />
       <div className="bg-container relative min-h-screen">
         <div className="flex flex-col items-end pr-10 lg:pr-20">
           <h1 className="text-white text-4xl md:text-6xl lg:text-8xl mt-20">Gregory Chang</h1>
@@ -81,7 +86,7 @@ export default function Home() {
         <Experience />
       </div>
 
-      <div className="flex flex-col items-center pt-20 bg-gray-950">
+      <div ref={projectsRef} className="flex flex-col items-center pt-20 bg-gray-950">
         <h1 className="text-white text-5xl md:text-6xl lg:text-8xl mb-16 ">Projects</h1>
       </div>
       <Projects />
