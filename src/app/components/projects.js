@@ -14,7 +14,7 @@ function Projects() {
         {
             id: 2,
             title: "Espresso",
-            description: "Espresso combines the space reptition of Anki and Quizlet for ",
+            description: "Espresso combines the usability of Quizlet and the space repetition algorithm from Anki",
             image: "/projects/Espresso-project.png",
             link: "https://codelabdavis.medium.com/interactive-learning-tool-espresso-551f1263925d"
         }
