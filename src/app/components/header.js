@@ -26,7 +26,7 @@ function Header({ scrollToExperience, scrollToProjects }) {
           <Link href="/#experience" onClick={handleExperienceClick} className="text-white hover:text-red-400 transition-colors duration-200 avgar-font">Experience</Link>
           <Link href="/#projects" onClick={handleProjectsClick} className="text-white hover:text-red-400 transition-colors duration-200 avgar-font">Projects</Link>
           <Link href="/contact" className="text-white hover:text-red-400 transition-colors duration-200 avgar-font">Contact</Link>
-          <Link href="/Resume/Greg Chang Resume.pdf" target="_blank" className="text-white hover:text-red-400 transition-colors duration-200 avgar-font">Resume</Link>
+          <Link href="/Resume/Gregory_Chang_Resume_2025.pdf" target="_blank" className="text-white hover:text-red-400 transition-colors duration-200 avgar-font">Resume</Link>
         </div>
       </ul>
       <div className="pt-2 w-full">
