@@ -25,7 +25,19 @@ export default function Home() {
     projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const phrases = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "Visual Art Hobbyist"];
+  // Handle hash navigation on page load
+  useEffect(() => {
+    // Small delay to ensure smooth scroll after page load
+    setTimeout(() => {
+      if (window.location.hash === '#experience' && experienceRef.current) {
+        scrollToExperience();
+      } else if (window.location.hash === '#projects' && projectsRef.current) {
+        scrollToProjects();
+      }
+    }, 100);
+  }, []);
+
+  const phrases = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "visual art hobbyist"];
 
   useEffect(() => {
     const handleTyping = () => {
