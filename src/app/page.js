@@ -3,8 +3,11 @@ import Header from "./components/header";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
 import { ChevronDown } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, useScroll, useAnimationControls } from 'framer-motion';
+
+// Move phrases array outside component
+const TYPING_PHRASES = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "visual art hobbyist"];
 
 export default function Home() {
   const [text, setText] = useState('');
@@ -16,6 +19,9 @@ export default function Home() {
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   
+  // Memoize phrases if you need them to be component-specific
+  const phrases = useMemo(() => TYPING_PHRASES, []);
+
   // Functions to scroll to sections
   const scrollToExperience = () => {
     experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -36,8 +42,6 @@ export default function Home() {
       }
     }, 100);
   }, []);
-
-  const phrases = ["CS student @ UCD", "software engineer", "product manager", "data scientist", "visual art hobbyist"];
 
   useEffect(() => {
     const handleTyping = () => {
