@@ -1,10 +1,10 @@
 import '@/app/globals.css';
 import { useState } from 'react';
 import Image from 'next/image';
-import ExperiencePopup from './ExperiencePopup';
-// Import your markdown content
+import ExperiencePopup from '@/app/components/experiencePopup';
+// Markdown Content Imports
 import softwareEngineerContent from '@/app/content/experiences/software-engineer.md';
-// Import other markdown files as needed
+import datalabContent from '@/app/content/experiences/datalab-datascience.md';
 
 function Experience() {
     const [hoveredItem, setHoveredItem] = useState(null);
@@ -22,7 +22,7 @@ function Experience() {
         {
             id: '2',
             title: 'Product Manager',
-            description: 'Managed product development for student exclusive ride-sharing website for 1000+ users',
+            description: 'Managed product development for UC Davis student exclusive ride-sharing website for 1000+ users',
             period: 'Jul \'24 - Present',
             image: '/experiences/aggieworks.png' 
         },
@@ -31,7 +31,8 @@ function Experience() {
             title: 'Assistant Data Scientist',
             description: 'Collected literature corpus for upcoming AI Humanities Center developed by College of Letters and Science',
             period: 'Mar \'24 - Jun \'24',
-            image: '/experiences/Datalab.png' 
+            image: '/experiences/Datalab.png',
+            content: datalabContent
         },
         {
             id: '4',
@@ -49,7 +50,7 @@ function Experience() {
         },
         {
             id: '6',
-            title: 'Software Engineer',
+            title: 'Software Engineer Intern',
             description: 'Developed AI powered travel iternerary planner and optimized finacial model for travel agency in Tokyo, Japan',
             period: 'Jun \'23 - Aug \'23',
             image: '/experiences/TOKI.png'

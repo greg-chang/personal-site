@@ -1,8 +1,8 @@
 ## Role Overview
-Led and mentored **50** students through a hackathon focused on prototyping, design principles, and coding fundamentals to design a website for a school club/event. I also provided hands-on guidance in software development practices. Outside of the hackathon, I also provided advice and debugging help  coding solutions, a competition for MESA students across California.
+Led and mentored **50** students through a hackathon focused on prototyping, design principles, and coding fundamentals to design a website for a school club/event. I also provided hands-on guidance in software development practices. Outside of the hackathon, I also provided advice and debugging help for coding solutions, a competition event for MESA students across California.
 
 ## Key Responsibilities
-- Designed and delivered 3 workshops covering web development fundamentals, HTML/CSS, and React
+- Designed and delivered 3 workshops covering web development fundamentals, Figma, HTML/CSS, and React
 - Provided one-on-one mentorship to students during project development
 
 ## Technologies & Skills Taught
@@ -11,3 +11,4 @@ Led and mentored **50** students through a hackathon focused on prototyping, des
 
 ## Mentorship Approach
 Focused on fostering a supportive learning environment while encouraging independent problem-solving and creative thinking. Emphasized practical, hands-on experience combined with fundamental software engineering principles. 
+

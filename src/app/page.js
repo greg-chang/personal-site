@@ -79,7 +79,6 @@ export default function Home() {
 
       <div ref={experienceRef} className="flex flex-col items-center pt-20 bg-white">
         <h1 className="text-black text-5xl md:text-6xl lg:text-8xl mb-16">Experiences</h1>
-        {/* <h1 className="text-black text-5xl md:text-6xl lg:text-8xl mb-16 ">Experiences</h1> */}
       </div>
 
       <div className="min-h-[85vh] flex flex-col items-start mx-10 md:mx-20  bg-white">

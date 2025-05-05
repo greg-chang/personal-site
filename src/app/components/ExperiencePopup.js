@@ -15,7 +15,6 @@ function ExperiencePopup({ experience, onClose }) {
                 </button>
                 
                 <div className="flex flex-col">
-                    {/* Header with title and image */}
                     <div className="flex justify-between items-start">
                         <div>
                             <h2 className="text-4xl avgar-font mb-2">{experience.title}</h2>
