@@ -1,7 +1,7 @@
 import '@/app/globals.css';
 import { useState } from 'react';
 import Image from 'next/image';
-import ExperiencePopup from '@/app/components/experiencePopup';
+import ExperiencePopup from './experiencePopup';
 // Markdown Content Imports
 import softwareEngineerContent from '@/app/content/experiences/software-engineer.md';
 import datalabContent from '@/app/content/experiences/datalab-datascience.md';
