@@ -60,7 +60,7 @@ export default function Home() {
         <div className="flex flex-col items-end pr-10 lg:pr-20">
           <h1 className="text-white text-4xl md:text-6xl lg:text-8xl mt-20">Gregory Chang</h1>
           <div className="text-white text-2xl md:text-3xl lg:text-4xl mt-4 flex">
-            <span className="avgar-font">I'm a </span>
+            <span className="avgar-font">I&apos;m a </span>
             <span className="typing-text ml-2 avgar-font text-red-400">{text}</span>
             <span className="cursor">|</span>
           </div>
