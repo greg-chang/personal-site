@@ -17,14 +17,15 @@ function Experience() {
             description: 'Led hackathon to teach prototyping, design, and coding to 50 students & created data report analyzing 370+ MESA students',
             period: 'Oct \'24 - Present',
             image: '/experiences/MESA.png',
-            content: softwareEngineerContent
+            url: 'https://mesausa.org/'
         },
         {
             id: '2',
             title: 'Product Manager',
             description: 'Managed product development for UC Davis student exclusive ride-sharing website for 1100+ users',
             period: 'Jul \'24 - Present',
-            image: '/experiences/aggieworks.png' 
+            image: '/experiences/aggieworks.png',
+            url: 'https://aggieworks.org/'
         },
         {
             id: '3',
@@ -32,14 +33,15 @@ function Experience() {
             description: 'Collected literature corpus for upcoming AI Humanities Center developed by College of Letters and Science',
             period: 'Mar \'24 - Jun \'24',
             image: '/experiences/Datalab.png',
-            content: datalabContent
+            url: 'https://datalab.ucdavis.edu/'
         },
         {
             id: '4',
             title: 'Assistant Visualization Researcher',
             description: 'Integrated 3D Gaussian Splatting into Linux environment to improve accuracy and clarity of images in VR spaces',
             period: 'Nov \'23 - Sept \'24',
-            image: '/experiences/Datalab.png' 
+            image: '/experiences/Datalab.png',
+            url: 'https://datalab.ucdavis.edu/'
         },
         {
             id: '5',
@@ -47,13 +49,15 @@ function Experience() {
             description: 'Developed flashcard website that integrated space reptition to improve learning efficiency',
             period: 'Oct \'23 - Jun \'24',
             image: '/experiences/codelablogo.png',
+            url: 'https://www.codelabdavis.com/'
         },
         {
             id: '6',
             title: 'Software Engineer Intern',
             description: 'Developed AI powered travel iternerary planner and optimized finacial model for travel agency in Tokyo, Japan',
             period: 'Jun \'23 - Aug \'23',
-            image: '/experiences/TOKI.png'
+            image: '/experiences/TOKI.png',
+            url: 'https://www.toki.tokyo/'
         }
     ];
 
@@ -65,7 +69,7 @@ function Experience() {
                     className="mb-10 avgar-font group hover:cursor-pointer hover:text-red-400 relative"
                     onMouseEnter={() => setHoveredItem(exp.id)}
                     onMouseLeave={() => setHoveredItem(null)}
-                    onClick={() => setSelectedExperience(exp)}
+                    onClick={() => exp.url && window.open(exp.url, '_blank')}
                 >
                     <h2 className="text-4xl md:text-5xl mb-4 transition-transform duration-300 group-hover:translate-x-2">{exp.title}</h2>
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
