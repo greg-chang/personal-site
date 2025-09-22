@@ -14,7 +14,7 @@ function Experience() {
         {
             id: '1',
             title: 'Software Engineer Mentor',
-            description: 'Led hackathon to teach prototyping, design, and coding to 50 students',
+            description: 'Led hackathon to teach prototyping, design, and coding to 50 students & created data report analyzing 370+ MESA students',
             period: 'Oct \'24 - Present',
             image: '/experiences/MESA.png',
             content: softwareEngineerContent
@@ -22,7 +22,7 @@ function Experience() {
         {
             id: '2',
             title: 'Product Manager',
-            description: 'Managed product development for UC Davis student exclusive ride-sharing website for 1000+ users',
+            description: 'Managed product development for UC Davis student exclusive ride-sharing website for 1100+ users',
             period: 'Jul \'24 - Present',
             image: '/experiences/aggieworks.png' 
         },
