@@ -34,7 +34,7 @@ function Projects() {
                             className="relative h-[60vh] rounded-2xl overflow-hidden group cursor-pointer"
                         >
                             {/* Project image as background */}
-                            <div className="absolute inset-0">
+                            <div className="absolute inset-5">
                                 <Image 
                                     src={project.image}
                                     alt={project.title}

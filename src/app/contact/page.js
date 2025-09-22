@@ -47,7 +47,7 @@ export default function Contact() {
         <div className='min-h-screen bg-black'>
             <Header />
             <div className='flex flex-col items-center container mx-auto px-4 pt-32'>
-                <h1 className='text-white  text-4xl md:text-5xl lg:text-6xl font-bold mb-8 avgar-font'>Get in Touch</h1>
+                <h1 className='text-white  text-4xl md:text-5xl lg:text-6xl mb-8 avgar-font'>Get in Touch</h1>
                 
                 <form onSubmit={handleSubmit} className='w-full max-w-2xl mx-auto space-y-6'>
                     <div>

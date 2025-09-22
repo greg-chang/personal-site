@@ -97,12 +97,12 @@ function Experience() {
             ))}
             
             {/* Render popup when an experience is selected */}
-            {selectedExperience && (
+            {/* {selectedExperience && (
                 <ExperiencePopup 
                     experience={selectedExperience} 
                     onClose={() => setSelectedExperience(null)}
                 />
-            )}
+            )} */}
         </div>
     );
 }
